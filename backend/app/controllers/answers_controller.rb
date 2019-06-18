@@ -6,7 +6,7 @@ class AnswersController < ApplicationController
   end
 
   def show 
-    answer = answer.find_by(id: params[:id])
+    answer = Answer.find_by(id: params[:id])
     render json: AnswerSerializer.new(answer)
   end
   
