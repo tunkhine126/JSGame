@@ -12,6 +12,7 @@ Answer.destroy_all
 
 dhara = User.create(username: 'Dhara')
 tun = User.create(username: 'Tun')
+krunal = User.create(username: 'Krunal')
 
 topic1 = Topic.create(name: 'Intro to Javascript', user_id: dhara.id)
 topic2 = Topic.create(name: 'Variables', user_id: tun.id)
