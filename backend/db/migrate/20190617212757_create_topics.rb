@@ -3,7 +3,6 @@ class CreateTopics < ActiveRecord::Migration[5.2]
     create_table :topics do |t|
       t.string :name
       t.integer :user_id
-      t.integer :question_id
 
       t.timestamps
     end
