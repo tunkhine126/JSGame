@@ -2,6 +2,8 @@
   <meta charset="utf-8">
   <title>Javascript Jr.</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
   <script src="src/index.js" charset="utf-8"></script>
   
 </head>
@@ -9,35 +11,42 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <a class="navbar-brand" href="#">Javascript Jr.</a>
 
+  <h4 id="welcome" style="text-align: center"></h4>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <form class="form_of_login">
       <h5>Login to Play: </h5>
-      <input class="form-control mr-sm-2" type="Start" placeholder="Username" aria-label="Start">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Start</button>
+      <input class="login_form" name="username" placeholder="Username" >
+      <button class="start_button" type="submit">Start</button>
     </form>
   </div>
 </nav>
 
-<body style="background-color:rgb(68, 247, 205)">
+<body style="background-color:rgb(108, 240, 209)">
 
   <div class="row">
       <div class="column1" style="width:20%; background-color:rgb(250, 250, 250); text-align:center"> 
         <h2>Topics Column </h2>
+        <ul id="topic_names">
+
+        </ul>
         
     </div>
   
       <!-- Middle Column -->
 
-    <div class="column2" style="background-color:#bbb; width:40%">
+    <div class="column2" style="background-color:#bbb; width:40%; height: 500px">
       <h2>Questions Column </h2>
-      <p>Some text..</p>
+      <p>Questions</p>
+      <ol id="questions">
+
+      </ol>
     </div>
 
        <!-- Right Column -->
-    <div class="column3" style="background-color:rgb(247, 7, 7); width:40%">
+    <div class="column3" style="background-color:rgb(230, 73, 73); width:40%; height: 500px">
         <h2>Map Column</h2>
         <p>Some text..</p>
       </div>
