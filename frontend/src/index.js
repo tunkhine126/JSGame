@@ -1,114 +1,100 @@
 // global variables
-const answer_ol = document.getElementById('answer_choices')
-let current_question_index = 0
-const answer_ul = document.getElementById('answer_choices')
+// const answer_ul = document.getElementById('answer_choices')
+let all_topics = []
+let all_questions = [];
+let question_index = 0
+
 
 document.addEventListener('DOMContentLoaded', ()=>{
   document.addEventListener('click', handleClickEvent)
   const form = document.querySelector('.form_of_login')
-  const score= 0;
-  const question_num=0;
-
   form.addEventListener('submit', loginEvent)
-// console.log(form)
-
+  // const score= 0;
+  // const question_num=0;
+  // console.log(form)
 })
 
 function handleClickEvent(e) {
   // console.log(e.target)
-
   if(e.target.className === 'answer_choice') checkAnswer(e.target)
-}
-
-function checkAnswer(choice_li) {
-  if(choice_li.dataset.correct === 'true')
-    alert('CORRECT!')
-  else
-    alert("THAT AIN'T IT, CHIEF.")
+  else if(e.target.className === 'topic') getQuestions(e)
 }
 
 function loginEvent(e){
   e.preventDefault()
   const username = e.target.username.value
   const header = document.getElementById("welcome")
-  // console.log(header)
   header.innerText = `Welcome ${username}`
 
   fetch("http://localhost:3000/topics/")
   .then(res => res.json())
   .then(topics => {
-    showTopic(topics)
+    topics.data.forEach(topic => all_topics.push(topic) )
+    showTopic(all_topics[0])
   })
+  .then(e.target.reset())
+}
 
+function showTopic(topic){
+  const topics_ul = document.getElementById("topic_names")
+  const name = topic.attributes.name
 
-  function showTopic(topics){
-    const topic_name = document.getElementById("topic_names")
-    const name = topics.data[0].attributes.name
-    // console.log(topics.data[0])
-    topic_name.innerHTML += `<li id= "topic1" data-id=${topics.data[0].id}> ${name}</li>`
-    
-    const li = document.getElementById('topic1')
-    li.addEventListener('click',showQuestion)
-  }
+  topics_ul.innerHTML += `<li class="topic" data-id=${topic.id}>${name}</li>`
+}
 
-  function showQuestion(e){
-    e.preventDefault()
+function checkAnswer(choice_li) {
+  if(choice_li.dataset.correct == 'true')
+    alert('CORRECT!')
+  else
+    alert("THAT AIN'T IT, CHIEF.")
+
+    question_index++
+    displayQuestion()
+}
+  
+  function getQuestions(e){
+  question_index = 0
    
     const id = e.target.dataset.id
-    const que_list = fetch("http://localhost:3000/questions/")
+    fetch("http://localhost:3000/questions/")
     .then(res => res.json())
     .then(questions => {
-      // console.log(questions)
-      let all_questions;
-      all_questions= [];
-      questions.data.forEach(que => {
-        // console.log(que)
-        if (que.attributes.topic_id === parseInt(id)){
-          all_questions.push(que)
-        }
+      questions.data.forEach(q => {
+        if(q.attributes.topic_id == id)
+          all_questions.push(q)
       });
-      // console.log(all_questions)
-      return all_questions
+      displayQuestion()
     })
-
-    que_list.then(data => {
-      console.log('DATA = ',data)
-      displayQuestion(data)
-    })
-  
+    
   }
 
-  
-
-  function displayQuestion(all_questions){
-    // console.log(all_questions)
-    // console.log(all_questions.length)
+  function displayQuestion() {
     const div_que = document.getElementById("questions")
-
-    let que = all_questions[current_question_index]
-    // const choices = getChoices(que)
-
+    let que = all_questions[question_index]
 
     div_que.innerHTML = `
-    <li id=${que.id}> ${que.attributes.name} </li>
-    `
+    <li id=${que.id}> ${que.attributes.name} </li>`
 
+    console.log(que)
     showAnswerChoices(que.id)
-
   }
+
 
   function showAnswerChoices(id) {
     const answer_ul = document.getElementById('answer_choices')
-
     answer_ul.innerHTML = ''
+
     fetch("http://localhost:3000/answers/")
     .then(resp => resp.json())
     .then(answers => {
-      answer_ul.innerHTML = ''
       answers.data.forEach(choice =>{
         if(choice.attributes.question_id == id) {
-          console.log('MATCH = ',id)
-          answer_ul.innerHTML += `<li id=${choice.id} data-correct="${choice.attributes.correct}" class="answer_choice">${choice.attributes.name}</li>`
+          let li = document.createElement('li')
+          li.dataset.correct = choice.attributes.correct
+          li.className = 'answer_choice'
+          li.innerText = choice.attributes.name
+          answer_ul.appendChild(li)
+          // answer_ul.innerHTML += `<li data-correct="${choice.attributes.correct}" class="answer_choice">${choice.attributes.name}</li>`
         }
       })
     })
@@ -118,4 +104,3 @@ function loginEvent(e){
 
   
 
-}
