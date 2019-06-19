@@ -83,7 +83,7 @@ answer4 = Answer.create(name: 'WRONG', question_id: question1.id, correct: false
 
 # #*Q:2
 answer5 = Answer.create(name: '1995', question_id: question2.id, correct: true)
-answer5 = Answer.create(name: '2000', question_id: question2.id, correct: false)
+answer5a = Answer.create(name: '2000', question_id: question2.id, correct: false)
 
 # #*Q:3
 answer6 = Answer.create(name: '</script>', question_id: question3.id, correct: true)
@@ -118,16 +118,16 @@ answer24 = Answer.create(name: 'Both of above', question_id: question8.id, corre
 answer25 = Answer.create(name: 'None', question_id: question8.id, correct: false)
 
 # Q:9 
-# answer26 = Answer.create(name: 'YES', question_id: question8.id, correct: false)
-# answer27 = Answer.create(name: 'YES', question_id: question8.id, correct: false)
-# answer28 = Answer.create(name: 'YES', question_id: question8.id, correct: false)
-# answer29 = Answer.create(name: 'YES', question_id: question8.id, correct: false)
+# answer26 = Answer.create(name: 'YES', question_id: question9.id, correct: false)
+# answer27 = Answer.create(name: 'YES', question_id: question9.id, correct: false)
+# answer28 = Answer.create(name: 'YES', question_id: question9.id, correct: false)
+# answer29 = Answer.create(name: 'YES', question_id: question9.id, correct: false)
 
 # Q:10 
-# answer30 = Answer.create(name: 'YES', question_id: question8.id, correct: false)
-# answer31 = Answer.create(name: 'YES', question_id: question8.id, correct: false)
-# answer32 = Answer.create(name: 'YES', question_id: question8.id, correct: false)
-# answer33 = Answer.create(name: 'YES', question_id: question8.id, correct: false)
+# answer30 = Answer.create(name: 'YES', question_id: question10.id, correct: false)
+# answer31 = Answer.create(name: 'YES', question_id: question10.id, correct: false)
+# answer32 = Answer.create(name: 'YES', question_id: question10.id, correct: false)
+# answer33 = Answer.create(name: 'YES', question_id: question10.id, correct: false)
 
 # #*Q:11
 answer34 = Answer.create(name: 'if i = 5  ', question_id: question11.id, correct: false)
