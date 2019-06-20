@@ -130,12 +130,12 @@ function checkAnswer(choice_li) {
     .then(answers => {
       answers.data.forEach(choice =>{
         if(choice.attributes.question_id == id) {
-          let li = document.createElement('li')
-          li.dataset.correct = choice.attributes.correct
-          li.className = 'answer_choice button'
-          li.innerText = choice.attributes.name
-          answer_ul.appendChild(li)
-          // answer_ul.innerHTML += `<li data-correct="${choice.attributes.correct}" class="answer_choice">${choice.attributes.name}</li>`
+          // let li = document.createElement('li')
+          // li.dataset.correct = choice.attributes.correct
+          // li.className = 'answer_choice button' 
+          // li.innerText = choice.attributes.name
+          // answer_ul.appendChild(li)
+          answer_ul.innerHTML += `<li data-correct="${choice.attributes.correct}" class="answer_choice button">${choice.attributes.name}</li> <br>`
           
         }
       })

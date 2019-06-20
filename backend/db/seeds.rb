@@ -25,6 +25,7 @@ topic2 = Topic.create(name: 'Variables', user_id: tun.id)
 topic3 = Topic.create(name: 'Conditional', user_id: krunal.id)
 topic4 = Topic.create(name: 'Functions', user_id: kris.id)
 topic5 = Topic.create(name: 'Scope', user_id: anjali.id)
+topic6 = Topic.create(name: 'Loop', user_id: zalak.id)
 
 # * Intro to Javascript (topic1)
 question1 = Question.create(name: 'What type of programming language is Javascript?', topic_id: topic1.id)
@@ -113,9 +114,9 @@ answer5b = Answer.create(name: '1984', question_id: question2.id, correct: false
 answer5c = Answer.create(name: '1990', question_id: question2.id, correct: false)
 
 # #*Q:3
-answer6 = Answer.create(name: '</script>', question_id: question3.id, correct: true)
-answer7 = Answer.create(name: '<js>', question_id: question3.id, correct: false)
-answer8 = Answer.create(name: '<javascript>', question_id: question3.id, correct: false)
+answer6 = Answer.create(name: 'A script Tag' , question_id: question3.id, correct: true)
+answer7 = Answer.create(name: 'A  js Tag', question_id: question3.id, correct: false)
+answer8 = Answer.create(name: 'A img Tag' , question_id: question3.id, correct: false)
 
 # #*Q:4
 answer9 = Answer.create(name: 'The <head> section', question_id: question4.id, correct: false)
@@ -123,7 +124,7 @@ answer10 = Answer.create(name: 'Both the <head> and the <body> section are corre
 answer11 = Answer.create(name: 'Anywhere', question_id: question4.id, correct: false)
 
 # #*Q:5
-answer12 = Answer.create(name: '<!--This is a comment-->', question_id: question5.id, correct: false)
+answer12 = Answer.create(name: '!--This is a comment--', question_id: question5.id, correct: false)
 answer13 = Answer.create(name: 'This is a comment', question_id: question5.id, correct: false)
 answer14 = Answer.create(name: '//This is a comment', question_id: question5.id, correct: true)
 answer15 = Answer.create(name: '#This is a comment', question_id: question5.id, correct: false)
@@ -222,13 +223,13 @@ answer66 = Answer.create(name: 'Function', question_id: question21.id, correct: 
 #*Q:22
 answer67 = Answer.create(name: 'True', question_id: question22.id, correct: true)
 answer68 = Answer.create(name: 'False', question_id: question22.id, correct: false)
-answer69 = Answer.create(name: 'Reference Error', question22.id, correct: false)
+answer69 = Answer.create(name: 'Reference Error', question_id: question22.id, correct: false)
 answer70 = Answer.create(name: 'Null', question_id: question22.id, correct: false)
 
 #*Q:23
 answer71 = Answer.create(name: 'Nothing', question_id: question23.id, correct: false)
 answer72 = Answer.create(name: 'alert ‘>1’', question_id: question23.id, correct: false)
-answer73 = Answer.create(name: 'alert ‘>undefined’', question23.id, correct: false)
+answer73 = Answer.create(name: 'alert ‘>undefined’', question_id: question23.id, correct: false)
 answer74 = Answer.create(name: 'alert ‘>2’', question_id: question23.id, correct: true)
 
 #*Q:24
