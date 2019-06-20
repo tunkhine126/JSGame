@@ -50,7 +50,7 @@ function showTopic(topic){
   // console.log(topic)
   const topics_ul = document.getElementById("topic_names")
   const name = topic.attributes.name
-
+  
   topics_ul.innerHTML += `<button class="topic" data-id=${topic.id}> ${name}</button></br>`
   }
   else{
@@ -74,12 +74,12 @@ function checkAnswer(choice_li) {
   }
     total_points++
     displayQuestion()
+
 }
   
 
   function getQuestions(e){
   // question_index = 0
-   
     const id = e.target.dataset.id
     fetch("http://localhost:3000/questions/")
     .then(res => res.json())
@@ -88,6 +88,7 @@ function checkAnswer(choice_li) {
         if(q.attributes.topic_id == id)
           all_questions.push(q)
       });
+
       displayQuestion()
     })
     
@@ -117,7 +118,6 @@ function checkAnswer(choice_li) {
       div_que.nextElementSibling.firstElementChild.innerText= ''
       showTopic(all_topics.shift())
     }
-  
   }
 
 
