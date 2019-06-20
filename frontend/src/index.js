@@ -117,7 +117,6 @@ function checkAnswer(choice_li) {
       div_que.nextElementSibling.firstElementChild.innerText= ''
       showTopic(all_topics.shift())
     }
-    
   
   }
 
@@ -155,6 +154,6 @@ function checkAnswer(choice_li) {
     
   }
 
-function clearColumn(){
+// function clearColumn(){
   
-}
+// }
