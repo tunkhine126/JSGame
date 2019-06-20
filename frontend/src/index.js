@@ -28,7 +28,9 @@ function loginEvent(e){
   e.preventDefault()
   const username = e.target.username.value
   const header = document.getElementById("welcome")
+  const progress = document.getElementById("title1")
   header.innerText = `Welcome ${username}`
+  progress.innerText = `${username}'s Progress` 
 
   fetch("http://localhost:3000/topics/")
   .then(res => res.json())
@@ -105,9 +107,9 @@ function checkAnswer(choice_li) {
       // console.log(que)
       // console.log(que.id)
       div_que.innerHTML = `
-      Questions:
+      Question:
       <li id=${que.id}> ${que.attributes.name} </li><br/>
-      Answer choices:
+      Choices:
       `
   
       // console.log(que)

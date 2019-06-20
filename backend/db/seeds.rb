@@ -29,34 +29,34 @@ topic6 = Topic.create(name: 'Loop', user_id: zalak.id)
 
 # * Intro to Javascript (topic1)
 question1 = Question.create(name: 'What type of programming language is Javascript?', topic_id: topic1.id)
-question2 = Question.create(name: 'What year was Jacascript created?', topic_id: topic1.id)
+question2 = Question.create(name: 'What year was Javascript created?', topic_id: topic1.id)
 question3 = Question.create(name: 'Inside which HTML element do we write JavaScript?', topic_id: topic1.id)
 question4 = Question.create(name: 'Where is the correct place to insert JavaScript?', topic_id: topic1.id)
-question5 = Question.create(name: 'How can you add a comment in a JavaScript?', topic_id: topic1.id)
+question5 = Question.create(name: 'What is the correct syntax to comment out a line in Javascript?', topic_id: topic1.id)
 
 # * Variables (topic2)
 question6 = Question.create(name: 'What is the definition of a variable in Javascript?', topic_id: topic2.id)
 question7 = Question.create(name: 'Do we still use var as a variable declaration in 2019?', topic_id: topic2.id)
-question8 = Question.create(name: 'Which of the following is true about variable naming conventions in JavaScript?', topic_id: topic2.id)
+question8 = Question.create(name: 'Which of the following is true about variable naming conventions in Javascript?', topic_id: topic2.id)
 question9 = Question.create(name: 'A local variable can be declared anywhere in your JavaScript code', topic_id: topic2.id)
 question10 = Question.create(name: 'Within the body of a function, a local variable takes precedence over a global variable with the same name.', topic_id: topic2.id)
 
 # * Conditionals (topic3)
-question11 = Question.create(name: 'How do you write an IF statement in JavaScript?', topic_id: topic3.id)
+question11 = Question.create(name: 'Which is the syntax to write an "if" statement in JavaScript?', topic_id: topic3.id)
 question12 = Question.create(name: 'In order to tell if something is perfectly equal, which of the below should you use?', topic_id: topic3.id)
 question13 = Question.create(name: 'What does the following expression return? "Number("1") - 1 == 0;', topic_id: topic3.id)
 question14 = Question.create(name: 'Which of these is not a conditional?', topic_id: topic3.id)
 question15 = Question.create(name: 'The conditional operator is the only JavaScript operator that takes three operands.', topic_id: topic3.id)
 
 # * Functions (topic 4)
-question16 = Question.create(name: 'A function requires a keyword, unique function name, a list of parameters, and a statement block surrounded by curly braces', topic_id: topic4.id)
-question17 = Question.create(name: 'Is this a proper function: let x = function (a, b) {return a * b};', topic_id: topic4.id)
+question16 = Question.create(name: 'A function requires a keyword, unique function name, a list of parameters, and a statement block surrounded by curly braces.', topic_id: topic4.id)
+question17 = Question.create(name: 'Is this a proper function? let x = function (a, b) {return a * b};', topic_id: topic4.id)
 question18 = Question.create(name: 'Which of these are not allowed when naming a function?' , topic_id: topic4.id)
 question19 = Question.create(name: 'How do you call the function named "myFunction"?', topic_id: topic4.id)
 question20 = Question.create(name: 'In a function, what does the word “arguments” refer to?', topic_id: topic4.id)
 
 # * Scope (topic 5)
-question21 = Question.create(name: 'What alert is displayed?:
+question21 = Question.create(name: 'What alert is displayed?
                                       function aaa() {
                                         return
                                         {
@@ -114,20 +114,21 @@ answer5b = Answer.create(name: '1984', question_id: question2.id, correct: false
 answer5c = Answer.create(name: '1990', question_id: question2.id, correct: false)
 
 # #*Q:3
-answer6 = Answer.create(name: 'A script Tag' , question_id: question3.id, correct: true)
-answer7 = Answer.create(name: 'A  js Tag', question_id: question3.id, correct: false)
-answer8 = Answer.create(name: 'A img Tag' , question_id: question3.id, correct: false)
+answer6 = Answer.create(name: 'In a "script" Tag' , question_id: question3.id, correct: true)
+answer7 = Answer.create(name: 'In a "js" Tag', question_id: question3.id, correct: false)
+answer8 = Answer.create(name: 'In a "img" Tag' , question_id: question3.id, correct: false)
 
 # #*Q:4
-answer9 = Answer.create(name: 'The <head> section', question_id: question4.id, correct: false)
-answer10 = Answer.create(name: 'Both the <head> and the <body> section are correct', question_id: question4.id, correct: true)
-answer11 = Answer.create(name: 'Anywhere', question_id: question4.id, correct: false)
+answer9 = Answer.create(name: 'The "head" section.', question_id: question4.id, correct: false)
+answer9a = Answer.create(name: 'The "body" section.', question_id: question4.id, correct: false)
+answer10 = Answer.create(name: 'In both the "head" and the "body".', question_id: question4.id, correct: true)
+answer11 = Answer.create(name: 'Anywhere your heart desires..', question_id: question4.id, correct: false)
 
 # #*Q:5
-answer12 = Answer.create(name: '!--This is a comment--', question_id: question5.id, correct: false)
-answer13 = Answer.create(name: 'This is a comment', question_id: question5.id, correct: false)
-answer14 = Answer.create(name: '//This is a comment', question_id: question5.id, correct: true)
-answer15 = Answer.create(name: '#This is a comment', question_id: question5.id, correct: false)
+answer12 = Answer.create(name: '!--This is commented out--', question_id: question5.id, correct: false)
+answer13 = Answer.create(name: 'This is is commented out', question_id: question5.id, correct: false)
+answer14 = Answer.create(name: '//This is is commented out', question_id: question5.id, correct: true)
+answer15 = Answer.create(name: '#This is is commented out', question_id: question5.id, correct: false)
 
 # #*Q:6
 answer16 = Answer.create(name: 'An object that represents two values, either "true" or "false".', question_id: question6.id, correct: false)
@@ -140,10 +141,10 @@ answer20 = Answer.create(name: 'YES', question_id: question7.id, correct: false)
 answer21 = Answer.create(name: 'NO', question_id: question7.id, correct: true)
 
 # #*Q:8
-answer22 = Answer.create(name: 'You should not use any of the JavaScript reserved keyword as variable name.', question_id: question8.id, correct: false)
-answer23 = Answer.create(name: 'JavaScript variable names should not start with a numeral (0-9).', question_id: question8.id, correct: false)
-answer24 = Answer.create(name: 'Both of above', question_id: question8.id, correct: true)
-answer25 = Answer.create(name: 'None', question_id: question8.id, correct: false)
+answer22 = Answer.create(name: 'You should not use any of the JavaScript reserved keywords as a variable name.', question_id: question8.id, correct: false)
+answer23 = Answer.create(name: 'Javascript variable names should not start with a numeral (0-9).', question_id: question8.id, correct: false)
+answer24 = Answer.create(name: 'Both of above.', question_id: question8.id, correct: true)
+answer25 = Answer.create(name: 'None of the above.', question_id: question8.id, correct: false)
 
 # Q:9 
 answer26 = Answer.create(name: 'True', question_id: question9.id, correct: false)
@@ -160,9 +161,9 @@ answer32 = Answer.create(name: 'if i == 5 then', question_id: question11.id, cor
 answer33 = Answer.create(name: 'if i = 5 then', question_id: question11.id, correct: false)
 
 # #*Q:12
-answer34 = Answer.create(name: '==', question_id: question12.id, correct: true)
+answer34 = Answer.create(name: '===', question_id: question12.id, correct: true)
 answer35 = Answer.create(name: '<', question_id: question12.id, correct: false)
-answer37 = Answer.create(name: '>', question_id: question12.id, correct: false)
+answer37 = Answer.create(name: '==', question_id: question12.id, correct: false)
 answer38 = Answer.create(name: '>=', question_id: question12.id, correct: false)
 
 # #*Q:13
@@ -198,8 +199,8 @@ answer50 = Answer.create(name: 'No', question_id: question17.id, correct: false)
 
 #*Q:18
 answer51 = Answer.create(name: 'Letters', question_id: question18.id, correct: false)
-answer52 = Answer.create(name: 'Include a number', question_id: question18.id, correct: false)
-answer53 = Answer.create(name: 'Include an underscore', question_id: question18.id, correct: false)
+answer52 = Answer.create(name: 'Can include a number', question_id: question18.id, correct: false)
+answer53 = Answer.create(name: 'Can include an underscore', question_id: question18.id, correct: false)
 answer54 = Answer.create(name: 'A reserved word in Javascript', question_id: question18.id, correct: true)
 
 #*Q:19
@@ -209,8 +210,8 @@ answer57 = Answer.create(name: 'call function myFunction', question_id: question
 answer58 = Answer.create(name: 'call.myFunction()', question_id: question19.id, correct: false)
 
 #*Q:20
-answer59 = Answer.create(name: 'The scope of the function', question_id: question20.id, correct: true)
-answer60 = Answer.create(name: 'It is aconditional in the function.', question_id: question20.id, correct: false)
+answer59 = Answer.create(name: 'The scope of the function.', question_id: question20.id, correct: true)
+answer60 = Answer.create(name: 'It is a conditional in the function.', question_id: question20.id, correct: false)
 answer61 = Answer.create(name: 'It is a property of the function.', question_id: question20.id, correct: true)
 answer62 = Answer.create(name: 'It refers to the return value.', question_id: question20.id, correct: false)
 
