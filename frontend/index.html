@@ -2,13 +2,80 @@
   <meta charset="utf-8">
   <title>Javascript Jr.</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 
   <script src="src/index.js" charset="utf-8"></script>
-  
+  <style>
+    nav{
+      background-color: #659DBD;
+    }
+
+    #myProgress {
+      width: 100%;
+      background-color: grey;
+    }
+
+    #myBar {
+      width: 1%;
+      height: 30px;
+      background-color: green;
+    }
+
+    .final_score{
+      margin: 30%;
+    }
+
+    .score{
+      background-color: rgb(129, 189, 50);
+      opacity: 0.7;
+      font-size: 1em;
+      margin: 2px;
+      border-radius: 12px;
+      text-align: center;
+      float: left;
+      display: inline-block;
+      width: 35%;
+      height: 25%;
+      padding: 2px;
+
+    }
+
+    #rcorners3 {
+  border-radius: 15px 50px;
+  /* background: #73AD21; */
+  padding: 20px; 
+  /* width: 200px; */
+  /* height: 150px;  */
+} 
+#title{
+  text-align: center;
+}
+.topic{
+  background-color:#5CDB95;
+  cursor: pointer;
+}
+    .button {
+  background-color: #659DBD;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  opacity: 0.8;
+  transition: 0.3s;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.button:hover {opacity: 1;
+  color: black;
+}
+  </style>
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light">
   <a class="navbar-brand" href="#">Javascript Jr.</a>
 
   <h4 id="welcome" style="text-align: center"></h4>
@@ -24,11 +91,11 @@
   </div>
 </nav>
 
-<body style="background-color:rgb(108, 240, 209)">
+<body style="background-color: #659DBD">
 
   <div class="row">
-      <div class="column1" style="width:20%; background-color:rgb(250, 250, 250); text-align:center"> 
-        <h2>Topics Column </h2>
+      <div class="column1" id="rcorners3" style="width:20%; background-color:#FBEEC1; text-align:center"> 
+        <h2>Topics</h2>
         <ul id="topic_names">
 
         </ul>
@@ -37,22 +104,29 @@
   
       <!-- Middle Column -->
 
-    <div class="column2" style="background-color:#bbb; width:40%; height: 500px">
-      <h2>Questions Column </h2>
-      <p>Questions</p>
+    <div class="column2" id="rcorners3" style="background-color:#BC986A; width:40%; height: 500px">
+      <h2 id="title">Questions</h2>
+      <!-- <p>Questions</p> -->
       <ol id="questions">
       </ol>
       <div id="answer_div">
-        Answer choices:
         <ul id="answer_choices">
         </ul>
       </div>
     </div>
 
        <!-- Right Column -->
-    <div class="column3" style="background-color:rgb(230, 73, 73); width:40%; height: 500px">
-        <h2>Map Column</h2>
-        <p>Some text..</p>
+    <div class="column3"  id="rcorners3" style="background-color:#DAAD86; width:40%; height: 500px">
+        <h2 id="title">Map</h2>
+        <div id="myProgress">
+            <div id="myBar"></div>
+          </div>
+        <div class="final_score">
+            <div class="score" id="total_score"> Total Score: <br>
+            </div>
+            <div class="score" id="your_score"> Your Score: <br>
+            </div>
+        </div>
       </div>
 
   </div>   
